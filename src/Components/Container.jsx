@@ -19,12 +19,11 @@ export default function Container() {
             return
 
         if (index !== null) {
-            const updateTasksList = [...tasks]
-            updateTasksList[index] = task;
-            setTasks(updateTasksList)
+            tasks[index] = task // updating value in the  tasks array
+            setTasks(tasks)      // setting value in the state variable tasks
             setIndex(null)
         } else {
-            setTasks([...tasks, task])
+            setTasks([...tasks, task])  // adding value in the tasks array with spread operator because we want, old value remains preserved
  
         }
            setTask("")  // clearing input
